@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.titulo {
+    text-align:center;
+    color: black;}
+.Subtitulo {
+    text-align:center;
+    color:  re;}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.oculto {
+    display: none;
+}
