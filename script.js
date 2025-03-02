@@ -1,13 +1,14 @@
 const boton = document.getElementById("mostrarVideo");
 const videoContainer = document.getElementById("videoContainer");
-const video = document.getElementById("miVideo");
+const video = document.getElementById("mivideo");
 
 boton.addEventListener("click", () => {
-    videoContainer.classlist.contains("oculto"); 
-
-    if (!videoContainer.classlist.toggle("oculto")) {
-        video.play();
+    // Alternamos la visibilidad del video
+    if (videoContainer.classList.contains("oculto")) {
+        videoContainer.classList.remove("oculto");
+        video.play();  // Inicia el video cuando es visible
     } else {
-        video.pause();
+        videoContainer.classList.add("oculto");
+        video.pause();  // Pausa el video cuando se oculta
     }
 });
