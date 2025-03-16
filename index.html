@@ -1,31 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sin Titulo México: Comida, restaurantes, tiendas y más</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .hover-shadow:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Menu -->
+                <div class="flex items-center">
+                    <button class="p-2 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-bars text-gray-600"></i>
+                    </button>
+                    <div class="text-red-500 font-bold text-2xl ml-2">Sin Titulo</div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-4">
+                    <div class="relative">
+                        <input type="text" 
+                               placeholder="Comida, restaurantes, tiendas, productos..." 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
 
-    <h1 class="titulo">hola Humanos les mando un beso desde africa</h1>
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 hover:bg-gray-100 rounded-lg transition-all">
+                        <i class="fas fa-user text-gray-600"></i>
+                    </button>
+                    <button class="p-2 hover:bg-gray-100 rounded-lg transition-all">
+                        <i class="fas fa-shopping-cart text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <h1 class="subtitulo">Un chango manda un beso desde africa a toda la humanidad este chango dice que todos debemos amarnos tal y como somos que por ello les manda un besito para que siempre tengas un buen dia y recuerda que siempre ser una buena persona
-
-    <p>Un changito te manda un beso desde africa</p>
-
-    <img src="chango.png" width="350px" alt="">
-
-    <button id="mostrarVideo">Ver video</button>
-
-    <div id="videoContainer" class="oculto">
-        <video id="mivideo" width="600" controls>
-            <source src="video.mp4" type="video/mp4">
-            tu navegador no soporta video
-        </video>
+    <!-- Location Bar -->
+    <div class="bg-white border-b mt-16">
+        <div class="container mx-auto px-4 py-2">
+            <button class="flex items-center text-red-500 hover:text-red-600 transition-all">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>Ciudad de México</span>
+                <i class="fas fa-chevron-down ml-2"></i>
+            </button>
+        </div>
     </div>
 
-    <script src="script.js"></script>
-    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">
+                Si tienes <span class="text-red-500">Sin Titulo</span>, tienes Todo.
+            </h1>
+            <div class="max-w-xl mx-auto">
+                <div class="relative">
+                    <i class="fas fa-map-marker-alt absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" 
+                           placeholder="¿Dónde quieres recibir tu compra?" 
+                           class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                </div>
+                <button class="mt-4 text-red-500 hover:text-red-600 transition-all">
+                    <i class="fas fa-location-arrow mr-2"></i>
+                    Usa tu ubicación actual
+                </button>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#" class="category-card bg-red-500 text-white p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold">Restaurantes</h3>
+                </a>
+                <a href="#" class="category-card bg-green-500 text-white p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold">Super</h3>
+                </a>
+                <a href="#" class="category-card bg-blue-500 text-white p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold">Express</h3>
+                </a>
+                <a href="#" class="category-card bg-purple-500 text-white p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold">Farmacia</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Service Icons -->
+        <section class="mb-12">
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+                <a href="#" class="text-center transition-all hover-scale">
+                    <div class="bg-blue-100 p-4 rounded-full mx-auto w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-pills text-blue-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm">Farmacia</span>
+                </a>
+                <a href="#" class="text-center transition-all hover-scale">
+                    <div class="bg-orange-100 p-4 rounded-full mx-auto w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-box text-orange-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm">Express</span>
+                </a>
+                <a href="#" class="text-center transition-all hover-scale">
+                    <div class="bg-red-100 p-4 rounded-full mx-auto w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-shopping-bag text-red-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm">Tiendas</span>
+                </a>
+                <a href="#" class="text-center transition-all hover-scale">
+                    <div class="bg-green-100 p-4 rounded-full mx-auto w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-clock text-green-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm">Turbo</span>
+                </a>
+                <a href="#" class="text-center transition-all hover-scale">
+                    <div class="bg-purple-100 p-4 rounded-full mx-auto w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-wine-bottle text-purple-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm">Licores</span>
+                </a>
+                <a href="#" class="text-center transition-all hover-scale">
+                    <div class="bg-yellow-100 p-4 rounded-full mx-auto w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-motorcycle text-yellow-500 text-2xl"></i>
+                    </div>
+                    <span class="text-sm">Sin Titulo</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Popular Searches -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold mb-4">Lo más buscado</h2>
+            <div class="flex flex-wrap gap-2">
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">pizza</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">cerveza</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">sushi</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">tacos</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">hamburguesa</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">agua</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">hielo</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-all">papas</a>
+            </div>
+        </section>
+
+        <!-- Join Sin Titulo Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Únete a Sin Titulo</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all hover-scale hover-shadow">
+                    <div class="w-full h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-utensils text-red-500 text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Registra tu restaurante</h3>
+                        <p class="text-gray-600 mb-4">Aumenta tus ventas y llega a más clientes</p>
+                        <button class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-all">
+                            Registrar ahora
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all hover-scale hover-shadow">
+                    <div class="w-full h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-store text-blue-500 text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Registra tu tienda</h3>
+                        <p class="text-gray-600 mb-4">Expande tu negocio con Sin Titulo</p>
+                        <button class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-all">
+                            Registrar ahora
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all hover-scale hover-shadow">
+                    <div class="w-full h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-motorcycle text-yellow-500 text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">¡Únete como repartidor!</h3>
+                        <p class="text-gray-600 mb-4">Genera ingresos extra siendo parte de Sin Titulo</p>
+                        <button class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-all">
+                            Registrar ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Acerca de Sin Titulo</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Conócenos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Soporte</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Centro de ayuda</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Preguntas frecuentes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Términos y condiciones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all text-2xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 Sin Titulo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Location button functionality
+        document.querySelector('button.text-red-500').addEventListener('click', function() {
+            // Here you would typically implement location selection functionality
+            alert('Seleccionar ubicación');
+        });
+
+        // Search functionality
+        document.querySelector('input[type="text"]').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                // Here you would typically implement search functionality
+                alert('Búsqueda: ' + this.value);
+            }
+        });
+    </script>
 </body>
 </html>
